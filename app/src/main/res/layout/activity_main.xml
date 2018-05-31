@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:placeholderImage="@drawable/leftjiantou"/>
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"/>
+        <Button
+            android:id="@+id/bt_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="搜索"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全部"/>
+        <TextView
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="天猫"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="店铺"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:focusableInTouchMode="true"
+        android:descendantFocusability="beforeDescendants">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:orientation="vertical">
+            <com.example.lenovo.yuekaomonione.custom.FlowLayout
+                android:id="@+id/fl"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+            </com.example.lenovo.yuekaomonione.custom.FlowLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="搜索历史"
+                android:textSize="18dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="无搜索记录" />
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/lv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:divider="@null"
+                android:dividerHeight="5dp"
+                android:focusable="false" />
+
+            <Button
+                android:id="@+id/bt_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:text="清空搜索历史" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
